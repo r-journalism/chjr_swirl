@@ -84,18 +84,42 @@ getExpr <- function(){
   getState()$expr
 }
 
-get_coursera_log <- function(){
-  clog_path <- file.path(getState()$udat, "rpe2.rds")
-  if(!file.exists(clog_path)){
-    clog <- data.frame(ln = c("Reading_Tabular_Data",
-                              "Looking_at_Data",
-                              "Data_Manipulation"), complete = rep("incorrect", 3),
-                       stringsAsFactors = FALSE)
-    saveRDS(clog, clog_path)
+
+# Get the swirl state
+getState <- function(){
+  # Whenever swirl is running, its callback is at the top of its call stack.
+  # Swirl's state, named e, is stored in the environment of the callback.
+  environment(sys.function(1))$e
+}
+
+
+submit_log <- function(){
+  
+    
+  # Please edit the link below
+  pre_fill_link <- "https://docs.google.com/forms/d/e/1FAIpQLScOZWZcSd7GhdmLF2rdZcj5EhmiQVls9_JD2kEO-U5_6E3vMg/viewform?usp=pp_url&entry.1052566177"
+  
+  # Do not edit the code below
+  if(!grepl("=$", pre_fill_link)){
+    pre_fill_link <- paste0(pre_fill_link, "=")
   }
   
-  clog <- readRDS(clog_path)
-  clog$complete[which(clog$ln == "Data_Manipulation")] <- "correct"
-  saveRDS(clog, clog_path)
-  clog
+  p <- function(x, p, f, l = length(x)){if(l < p){x <- c(x, rep(f, p - l))};x}
+  
+  temp <- tempfile()
+  log_ <- getLog()
+  nrow_ <- max(unlist(lapply(log_, length)))
+  log_tbl <- data.frame(user = rep(log_$user, nrow_),
+                        course_name = rep(log_$course_name, nrow_),
+                        lesson_name = rep(log_$lesson_name, nrow_),
+                        question_number = p(log_$question_number, nrow_, NA),
+                        correct = p(log_$correct, nrow_, NA),
+                        attempt = p(log_$attempt, nrow_, NA),
+                        skipped = p(log_$skipped, nrow_, NA),
+                        datetime = p(log_$datetime, nrow_, NA),
+                        stringsAsFactors = FALSE)
+  write.csv(log_tbl, file = temp, row.names = FALSE)
+  encoded_log <- base64encode(temp)
+  browseURL(paste0(pre_fill_link, encoded_log))
+  
 }

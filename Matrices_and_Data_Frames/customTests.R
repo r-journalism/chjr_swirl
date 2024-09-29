@@ -41,85 +41,33 @@
    getState()$expr
  }
  
- get_coursera_log <- function(){
-   clog_path <- file.path(getState()$udat, "rpe1.rds")
-   if(!file.exists(clog_path)){
-     clog <- data.frame(ln = c("Setting_Up_Swirl", "Basic_Building_Blocks", "Sequences_of_Numbers", 
-                               "Vectors", "Missing_Values", "Subsetting_Vectors", "Matrices_and_Data_Frames", 
-                               "Logic", "Workspace_and_Files"), complete = rep("incorrect", 9),
+submit_log <- function(){
+  
+    
+  # Please edit the link below
+  pre_fill_link <- "https://docs.google.com/forms/d/e/1FAIpQLScOZWZcSd7GhdmLF2rdZcj5EhmiQVls9_JD2kEO-U5_6E3vMg/viewform?usp=pp_url&entry.1052566177"
+  
+  # Do not edit the code below
+  if(!grepl("=$", pre_fill_link)){
+    pre_fill_link <- paste0(pre_fill_link, "=")
+  }
+  
+  p <- function(x, p, f, l = length(x)){if(l < p){x <- c(x, rep(f, p - l))};x}
+  
+  temp <- tempfile()
+  log_ <- getLog()
+  nrow_ <- max(unlist(lapply(log_, length)))
+  log_tbl <- data.frame(user = rep(log_$user, nrow_),
+                        course_name = rep(log_$course_name, nrow_),
+                        lesson_name = rep(log_$lesson_name, nrow_),
+                        question_number = p(log_$question_number, nrow_, NA),
+                        correct = p(log_$correct, nrow_, NA),
+                        attempt = p(log_$attempt, nrow_, NA),
+                        skipped = p(log_$skipped, nrow_, NA),
+                        datetime = p(log_$datetime, nrow_, NA),
                         stringsAsFactors = FALSE)
-     saveRDS(clog, clog_path)
-   }
-   
-   clog <- readRDS(clog_path)
-   clog$complete[which(clog$ln == "Matrices_and_Data_Frames")] <- "correct"
-   saveRDS(clog, clog_path)
-   clog
- }
- 
- coursera_on_demand <- function(){
-   selection <- getState()$val
-   if(selection == "Yes"){
-     email <- readline("What is your email address? ")
-     token <- readline("What is your assignment token? ")
-     
-     clog <- get_coursera_log()
-     
-     payload <- sprintf('{  
-                        "assignmentKey": "ATsO13UGEeaWKQo_29qXIQ",
-                        "submitterEmail": "%s",  
-                        "secret": "%s",  
-                        "parts": {  
-                        "V84sK": {  
-                        "output": "%s"  
-                        },
-                        "273Gf": {  
-                        "output": "%s"  
-                        },
-                        "aZzDe": {  
-                        "output": "%s"  
-                        },
-                        "uUxeT": {  
-                        "output": "%s"  
-                        },
-                        "XblAh": {  
-                        "output": "%s"  
-                        },
-                        "5hEHU": {  
-                        "output": "%s"  
-                        },
-                        "Bbad8": {  
-                        "output": "%s"  
-                        },
-                        "WF7Ai": {  
-                        "output": "%s"  
-                        },
-                        "dEdnZ": {  
-                        "output": "%s"  
-                        }
-                        }  
-   }', email, token, clog$complete[1], clog$complete[2], clog$complete[3],
-                       clog$complete[4], clog$complete[5], clog$complete[6],
-                       clog$complete[7], clog$complete[8], clog$complete[9])
-     url <- 'https://www.coursera.org/api/onDemandProgrammingScriptSubmissions.v1'
-     
-     respone <- httr::POST(url, body = payload)
-     if(respone$status_code >= 200 && respone$status_code < 300){
-       message("Grade submission succeeded!")
-     } else {
-       message("Grade submission failed.")
-       message("Press ESC if you want to exit this lesson and you")
-       message("want to try to submit your grade at a later time.")
-       return(FALSE)
-     }
- } else if(selection == "No"){
-   return(TRUE)
- } else {
-   message("Submit the following code as the answer")
-   message("to a quiz question on Coursera.\n")
-   message("#########################\n")
-   message(keygen(), "\n")
-   message("#########################")
-   return(TRUE)
- }
-   }
+  write.csv(log_tbl, file = temp, row.names = FALSE)
+  encoded_log <- base64encode(temp)
+  browseURL(paste0(pre_fill_link, encoded_log))
+  
+}

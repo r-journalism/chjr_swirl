@@ -2,3 +2,4 @@ dplyr
 tidyr
 titanic
 faraway
+base64enc
