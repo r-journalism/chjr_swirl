@@ -42,9 +42,10 @@ install_course_github("r-journalism", "chjr_swirl")
 
 This is the only step that you will repeat every time you want to run swirl. First, you will load the package using the library() function. Then you will call the function that starts the magic! Type the following, pressing Enter after each line:
 
-> library("swirl")
-> swirl()
-
+```
+library("swirl")
+swirl()
+```
 
 ## Step 5: Use swirl
 
