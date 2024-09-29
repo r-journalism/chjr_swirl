@@ -1,0 +1,26 @@
+{
+    "id": "1778E895",
+    "path": "~/Projects/chjr_swirl/Basic_Building_Blocks/customTests.R",
+    "project_path": "Basic_Building_Blocks/customTests.R",
+    "type": "r_source",
+    "hash": "0",
+    "contents": "",
+    "dirty": false,
+    "created": 1727552561640.0,
+    "source_on_save": false,
+    "relative_order": 3,
+    "properties": {
+        "source_window_id": "",
+        "Source": "Source",
+        "cursorPosition": "72,2",
+        "scrollLine": "51"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1727553228,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1727553228028,
+    "read_only": false,
+    "read_only_alternatives": []
+}
