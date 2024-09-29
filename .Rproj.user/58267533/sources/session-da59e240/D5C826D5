@@ -1,26 +1,26 @@
 {
-    "id": "1778E895",
-    "path": "~/Projects/chjr_swirl/Basic_Building_Blocks/customTests.R",
-    "project_path": "Basic_Building_Blocks/customTests.R",
+    "id": "D5C826D5",
+    "path": "~/Projects/chjr_swirl/The_stringr_Package/customTests.R",
+    "project_path": "The_stringr_Package/customTests.R",
     "type": "r_source",
     "hash": "0",
     "contents": "",
     "dirty": false,
-    "created": 1727552561640.0,
+    "created": 1727617941831.0,
     "source_on_save": false,
-    "relative_order": 3,
+    "relative_order": 11,
     "properties": {
         "source_window_id": "",
         "Source": "Source",
-        "cursorPosition": "69,47",
-        "scrollLine": "0"
+        "cursorPosition": "51,17",
+        "scrollLine": "43"
     },
     "folds": "",
-    "lastKnownWriteTime": 1727618030,
+    "lastKnownWriteTime": 1594045782,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1727618030,
+    "last_content_update": 1594045782,
     "read_only": false,
     "read_only_alternatives": []
 }

@@ -1,4 +1,5 @@
 ~%2FProjects%2Fchjr_swirl%2FBasic_Building_Blocks%2FcustomTests.R="11EFEEE1"
+~%2FProjects%2Fchjr_swirl%2FBasic_Building_Blocks%2Fdependson.txt="4F1F0249"
 ~%2FProjects%2Fchjr_swirl%2FBasic_Building_Blocks%2FinitLesson.R="7954E3F6"
 ~%2FProjects%2Fchjr_swirl%2FBasic_Building_Blocks%2Flesson.yaml="2F95399F"
 ~%2FProjects%2Fchjr_swirl%2FData_Manipulation%2FcustomTests.R="35DE0DE1"
@@ -12,3 +13,6 @@
 ~%2FProjects%2Fchjr_swirl%2FSubsetting_Vectors%2Flesson.yaml="F6667BD2"
 ~%2FProjects%2Fchjr_swirl%2FText_Manipulation_Functions%2FcustomTests.R="3A9DBB54"
 ~%2FProjects%2Fchjr_swirl%2FText_Manipulation_Functions%2Flesson.yaml="F476DC2E"
+~%2FProjects%2Fchjr_swirl%2FThe_stringr_Package%2FcustomTests.R="CAFEB5E6"
+~%2FProjects%2Fchjr_swirl%2FThe_stringr_Package%2Fdependson.txt="ACB51562"
+~%2FProjects%2Fchjr_swirl%2FThe_stringr_Package%2FinitLesson.R="8C22A31D"
