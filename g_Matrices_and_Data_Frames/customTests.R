@@ -10,7 +10,7 @@
  }
 
  keygen <- function(){
-   set.seed(sum(as.numeric(charToRaw("Matrices_and_Data_Frames"))))
+   set.seed(sum(as.numeric(charToRaw("g_Matrices_and_Data_Frames"))))
    pran <- function(n = 1){
      replicate(n, sample(c(LETTERS, letters, 0:9), 1))
    }

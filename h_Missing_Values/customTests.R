@@ -1,5 +1,5 @@
 keygen <- function(){
-  set.seed(sum(as.numeric(charToRaw("Missing_Values"))))
+  set.seed(sum(as.numeric(charToRaw("h_Missing_Values"))))
   pran <- function(n = 1){
     replicate(n, sample(c(LETTERS, letters, 0:9), 1))
   }

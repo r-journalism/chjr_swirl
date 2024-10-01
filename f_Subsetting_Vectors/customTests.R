@@ -1,5 +1,5 @@
 keygen <- function(){
-  set.seed(sum(as.numeric(charToRaw("Subsetting_Vectors"))))
+  set.seed(sum(as.numeric(charToRaw("f_Subsetting_Vectors"))))
   pran <- function(n = 1){
     replicate(n, sample(c(LETTERS, letters, 0:9), 1))
   }

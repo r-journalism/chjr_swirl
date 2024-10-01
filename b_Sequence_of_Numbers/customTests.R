@@ -1,5 +1,5 @@
 keygen <- function(){
-  set.seed(sum(as.numeric(charToRaw("Sequences_of_Numbers"))))
+  set.seed(sum(as.numeric(charToRaw("b_Sequences_of_Numbers"))))
   pran <- function(n = 1){
     replicate(n, sample(c(LETTERS, letters, 0:9), 1))
   }
