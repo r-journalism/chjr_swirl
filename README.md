@@ -34,8 +34,7 @@ Note that the > symbol at the beginning of the line is R's prompt for you type s
 After you've done step 3, run these lines in the console:
 
 ```
-library(swirl)
-install_course_github("r-journalism", "chjr_swirl")
+swirl::install_course_github("r-journalism", "chjr_swirl")
 ```
 
 
@@ -44,7 +43,7 @@ install_course_github("r-journalism", "chjr_swirl")
 This is the only step that you will repeat every time you want to run swirl. First, you will load the package using the library() function. Then you will call the function that starts the magic! Type the following, pressing Enter after each line:
 
 ```
-library("swirl")
+library(swirl)
 swirl()
 ```
 
@@ -72,8 +71,7 @@ install.packages("swirl")
 
 * Install the `chjr_swirl` lessons:
 ```
-library(swirl) # load the swirl package
-install_course_github("r-journalism", "chjr_swirl")
+swirl::install_course_github("r-journalism", "chjr_swirl")
 ```
 
 * Start a `chjr_swirl` lesson (after loading the `swirl` package):
