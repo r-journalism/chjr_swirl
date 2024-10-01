@@ -53,11 +53,11 @@ Enter your name and run the exercises from `chjr swirl`!
 
 Please run through these exercises before we meet on October 7:
 
-1. Basic Building Blocks
-2. Sequences of Numbers
-3. Vectors
-4. Looking atData
-5. Logic  
+a. Basic Building Blocks
+b. Sequences of Numbers
+c. Vectors
+d. Looking at Data
+e. Logic  
 
 There are 10 other lessons and you are totally welcome to go over that if you're curious and have the free time! But please prioritize the first four.
 
