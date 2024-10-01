@@ -34,6 +34,7 @@ Note that the > symbol at the beginning of the line is R's prompt for you type s
 After you've done step 3, run these lines in the console:
 
 ```
+library(swirl)
 install_course_github("r-journalism", "chjr_swirl")
 ```
 
@@ -53,10 +54,11 @@ Enter your name and run the exercises from `chjr swirl`!
 
 Please run through these exercises before we meet on October 7:
 
-1. Basic Building Blocks         
-2. Data Manipulation          
-3. Logic
-4. Looking at Data   
+1. Basic Building Blocks
+2. Sequences of Numbers
+3. Vectors
+4. Looking atData
+5. Logic  
 
 There are 10 other lessons and you are totally welcome to go over that if you're curious and have the free time! But please prioritize the first four.
 
